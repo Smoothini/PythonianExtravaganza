@@ -99,31 +99,37 @@ def deg2rad(deg):
   return deg * (math.pi/180)
 
 
+#count the number of taxis around a crime
 def taxi_counter(crime):
     count = 0
     for neighbour in get_neighbour(crime["community"]):
         count = count + taxi_in_area(neigh)
     
-
+#count the number of taxis in a community
+#based on certain regulations
+#community -> timestamp -> distance
 def taxi_in_area(area):
     d = 1.5 #km
     count = 0
-    #filter quarter by area
+    #filter by community
     #
-    #here pls <3
-        #filter area by time
+    #code here pls <3
+        #filter result by time
         #taxis already ordered by time
         #for efficiency we could convert the time to epoch
         #and then subtract 1 jan 2013 from it datetime.datetime(2013,1,1).timestamp()
         #to see around what index to start lookin for taxis
         #
-        #here pls <3
+        #code here pls <3
             #last but not least check every left over taxi
             #if its in the 1.5km radius with get distance
-            #this one last because its the most power using one
+            #this one last because its the most resources using one
+            #I mean I think, not sure if this or time, will see
             #count = count + 1
             #
-            #here pls also <3
-    
+            #code also here pls <3
+
+
+#random tested working distance from uc house to center, should be ~5.5
 print(get_distance(57.044890, 9.914537, 57.006953, 9.882486))
 
