@@ -80,3 +80,6 @@ dicc = {1: [1,2,4,77],
 #returns the neighbour array
 def get_neighbour(community):
     return dicc[community]
+
+
+print(get_neighbour(13))
