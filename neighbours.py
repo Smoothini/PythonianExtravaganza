@@ -1,4 +1,4 @@
-import math
+import math, datetime
 
 #dictionary with neighbours
 dicc = {1: [1,2,4,77],
@@ -85,6 +85,7 @@ def get_neighbour(community):
 
 
 #haversine formula
+#x is latitude, y is longitude
 def get_distance(x1,y1,x2,y2):
     dx = deg2rad(x2-x1)
     dy = deg2rad(y2-y1)
@@ -93,9 +94,36 @@ def get_distance(x1,y1,x2,y2):
     c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
     d = R * c
     return d
-
+#degrees to radians converter
 def deg2rad(deg):
   return deg * (math.pi/180)
 
+
+def taxi_counter(crime):
+    count = 0
+    for neighbour in get_neighbour(crime["community"]):
+        count = count + taxi_in_area(neigh)
+    
+
+def taxi_in_area(area):
+    d = 1.5 #km
+    count = 0
+    #filter quarter by area
+    #
+    #here pls <3
+        #filter area by time
+        #taxis already ordered by time
+        #for efficiency we could convert the time to epoch
+        #and then subtract 1 jan 2013 from it datetime.datetime(2013,1,1).timestamp()
+        #to see around what index to start lookin for taxis
+        #
+        #here pls <3
+            #last but not least check every left over taxi
+            #if its in the 1.5km radius with get distance
+            #this one last because its the most power using one
+            #count = count + 1
+            #
+            #here pls also <3
+    
 print(get_distance(57.044890, 9.914537, 57.006953, 9.882486))
 
