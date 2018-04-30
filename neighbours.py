@@ -1,3 +1,4 @@
+#dictionary with neighbours
 dicc = {1: [1,2,4,77],
         2: [2,1,13,14,77],
         3: [3,4,5,6,77],
