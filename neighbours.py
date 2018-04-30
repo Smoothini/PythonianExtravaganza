@@ -77,5 +77,6 @@ dicc = {1: [1,2,4,77],
 	76: [76,9,10,17],
 	77: [77,1,2,3,4]}
 
+#returns the neighbour array
 def get_neighbour(community):
     return dicc[community]
