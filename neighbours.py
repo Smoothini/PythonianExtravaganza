@@ -1,3 +1,5 @@
+import math
+
 #dictionary with neighbours
 dicc = {1: [1,2,4,77],
         2: [2,1,13,14,77],
@@ -82,4 +84,18 @@ def get_neighbour(community):
     return dicc[community]
 
 
-print(get_neighbour(13))
+#haversine formula
+def get_distance(x1,y1,x2,y2):
+    dx = deg2rad(x2-x1)
+    dy = deg2rad(y2-y1)
+    R = 6371
+    a = math.sin(dx/2) * math.sin(dx/2) + math.cos(deg2rad(y1)) * math.cos(deg2rad(y2)) * math.sin(dy/2) * math.sin(dy/2)
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
+    d = R * c
+    return d
+
+def deg2rad(deg):
+  return deg * (math.pi/180)
+
+print(get_distance(57.044890, 9.914537, 57.006953, 9.882486))
+
